@@ -2,6 +2,10 @@
 document.getElementById(`button`).addEventListener(`click`, function () {
     document.querySelector(`.grid`).innerHTML = ``;
 
+// Definisco variabile per tenere traccia delle caselle non bomba cliccate
+
+let goodcells = 0
+
     // Ciclo che permette di generare 100 celle
     // ******************************************************************************
     for (let i = 0; i < 100; i++) {
@@ -12,8 +16,16 @@ document.getElementById(`button`).addEventListener(`click`, function () {
         currentSquare.addEventListener(`click`, function () {
             this.classList.add(`clicked`);
             console.log(this.innerText)
-            if(bombs.includes(parseInt(this.innerText))){
-alert (`Hai cliccato una bomba: `+this.innerText)
+          
+            if (bombs.includes(parseInt(this.innerText))) {
+                this.classList.add(`red`)
+                grid.classList.add(`events-none`)
+                alert(`Hai preso una bomba`+ this.innerText)
+                alert(goodcells)
+            }
+
+            else{
+                goodcells++
             }
         });
 
@@ -43,7 +55,7 @@ function createGridSquare(number) {
 }
 // ******************************************************************************
 
- 
+
 
 
 // Dichiaro la variabile "let grid" e la vado ad inserire nel div con "id=grid"
@@ -51,7 +63,7 @@ let grid = document.getElementById(`grid`);
 
 let bombs
 
-function createBombsArray(min, max ) {
+function createBombsArray(min, max) {
 
     bombs = []
     let i = 0
@@ -71,7 +83,7 @@ function createBombsArray(min, max ) {
 
 
 
-let arrayBombs = createBombsArray (1, 100)
+let arrayBombs = createBombsArray(1, 100)
 console.log(arrayBombs)
 
 
