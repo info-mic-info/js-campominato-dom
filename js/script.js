@@ -101,7 +101,7 @@ function createBombsArray(min, max) {
     return bombs
 }
 
-
+ 
 
 let arrayBombs = createBombsArray(1,100)
 console.log(arrayBombs)
