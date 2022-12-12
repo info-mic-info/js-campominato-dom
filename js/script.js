@@ -49,10 +49,11 @@ function createGridSquare(number) {
 // Dichiaro la variabile "let grid" e la vado ad inserire nel div con "id=grid"
 let grid = document.getElementById(`grid`);
 
+let bombs
 
 function createBombsArray(min, max ) {
 
-    let bombs = []
+    bombs = []
     let i = 0
     while (i < 16) {
 
