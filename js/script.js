@@ -2,9 +2,28 @@
 document.getElementById(`button`).addEventListener(`click`, function () {
     document.querySelector(`.grid`).innerHTML = ``;
 
-// Definisco variabile per tenere traccia delle caselle non bomba cliccate
 
-let goodcells = 0
+
+
+
+    function showAllBombs(bombs, cellNumber){
+    // function showAllBombs(bombs) {
+        const cells = document.getElementsByClassName(`square`)
+
+        for (let i = 0; i < cells.length; i++) {
+            let cell = cells[i]
+            if (bombs.includes(parseInt(cell.innerText))) {
+                cell.classList.add(`clicked`)
+                cell.classList.add(`red`) 
+            }
+
+        }
+    }
+
+
+    // Definisco variabile per tenere traccia delle caselle non bomba cliccate
+
+    let goodcells = 0
 
     // Ciclo che permette di generare 100 celle
     // ******************************************************************************
@@ -16,15 +35,16 @@ let goodcells = 0
         currentSquare.addEventListener(`click`, function () {
             this.classList.add(`clicked`);
             console.log(this.innerText)
-          
+
             if (bombs.includes(parseInt(this.innerText))) {
                 this.classList.add(`red`)
                 grid.classList.add(`events-none`)
-                alert(`Hai preso una bomba`+ this.innerText)
+                showAllBombs(bombs, 100)
+                alert(`Hai preso una bomba` + this.innerText)
                 alert(goodcells)
             }
 
-            else{
+            else {
                 goodcells++
             }
         });
@@ -83,7 +103,7 @@ function createBombsArray(min, max) {
 
 
 
-let arrayBombs = createBombsArray(1, 100)
+let arrayBombs = createBombsArray(1,)
 console.log(arrayBombs)
 
 
