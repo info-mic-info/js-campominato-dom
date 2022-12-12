@@ -12,6 +12,9 @@ document.getElementById(`button`).addEventListener(`click`, function () {
         currentSquare.addEventListener(`click`, function () {
             this.classList.add(`clicked`);
             console.log(this.innerText)
+            if(bombs.includes(parseInt(this.innerText))){
+alert (`Hai cliccato una bomba: `+this.innerText)
+            }
         });
 
         // "appendChild" crea un figlio all'interno dell'elemento che seleziono, in questo caso "grid". Risultato, all'interno dell'HTML dell'elemento con id "grid" che è collegato alla variabile "grid" di javascript, vengono creati "div" pari al numero del ciclo For.
@@ -21,10 +24,6 @@ document.getElementById(`button`).addEventListener(`click`, function () {
     // ******************************************************************************
 
 })
-
-
-
-
 
 
 // Questa funzione crea una "div", gli aggiunge una "classe=square" e con return la restituisce
@@ -44,15 +43,11 @@ function createGridSquare(number) {
 }
 // ******************************************************************************
 
-
+ 
 
 
 // Dichiaro la variabile "let grid" e la vado ad inserire nel div con "id=grid"
 let grid = document.getElementById(`grid`);
-
-
-
-
 
 
 function createBombsArray(min, max ) {
@@ -74,8 +69,8 @@ function createBombsArray(min, max ) {
 }
 
 
-let arrayBombs =[]
-arrayBombs = createBombsArray (1, 100)
+
+let arrayBombs = createBombsArray (1, 100)
 console.log(arrayBombs)
 
 
