@@ -6,8 +6,8 @@ document.getElementById(`button`).addEventListener(`click`, function () {
 
 
 
-    function showAllBombs(bombs, cellNumber){
-    // function showAllBombs(bombs) {
+    // function showAllBombs(bombs, cellNumber){
+    function showAllBombs(bombs, cellNumber) {
         const cells = document.getElementsByClassName(`square`)
 
         for (let i = 0; i < cells.length; i++) {
@@ -103,7 +103,7 @@ function createBombsArray(min, max) {
 
 
 
-let arrayBombs = createBombsArray(1,)
+let arrayBombs = createBombsArray(1,100)
 console.log(arrayBombs)
 
 
