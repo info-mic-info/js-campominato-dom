@@ -40,8 +40,8 @@ document.getElementById(`button`).addEventListener(`click`, function () {
                 this.classList.add(`red`)
                 grid.classList.add(`events-none`)
                 showAllBombs(bombs, 100)
-                alert(`Hai preso una bomba` + this.innerText)
-                alert(goodcells)
+                alert(`Hai preso una bomba alla casella numero: ` + this.innerText)
+                alert(`Hai totalizzato ` + goodcells + ` punti`)
             }
 
             else {
