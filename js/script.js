@@ -41,7 +41,9 @@ document.getElementById(`button`).addEventListener(`click`, function () {
                 grid.classList.add(`events-none`)
                 showAllBombs(bombs, 100)
                 alert(`Hai preso una bomba alla casella numero: ` + this.innerText)
-                alert(`Hai totalizzato ` + goodcells + ` punti`)
+                // alert(`Hai totalizzato ` + goodcells + ` punti`)
+                document.getElementById(`punteggio`).innerHTML +=goodcells + ` punti`
+                document.getElementById(`bomba`).innerHTML += `Hai preso una bomba alla casella numero: ` + this.innerText +`!!!`
             }
 
             else {

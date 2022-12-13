@@ -85,3 +85,7 @@ footer{
 .events-none{
      pointer-events: none;
 }
+
+.score{
+    margin: 30px 30px;
+}
